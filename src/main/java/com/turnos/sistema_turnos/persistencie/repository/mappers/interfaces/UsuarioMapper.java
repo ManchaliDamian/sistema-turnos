@@ -1,4 +1,4 @@
-package com.turnos.sistema_turnos.persistencie.repository.mappers;
+package com.turnos.sistema_turnos.persistencie.repository.mappers.interfaces;
 
 import com.turnos.sistema_turnos.model.Usuario;
 import com.turnos.sistema_turnos.persistencie.entity.UsuarioJPA;

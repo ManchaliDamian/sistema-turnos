@@ -4,7 +4,7 @@ import com.turnos.sistema_turnos.model.Usuario;
 import com.turnos.sistema_turnos.persistencie.DAOs.UsuarioDAO;
 import com.turnos.sistema_turnos.persistencie.entity.UsuarioJPA;
 import com.turnos.sistema_turnos.persistencie.repository.interfaces.UsuarioRepository;
-import com.turnos.sistema_turnos.persistencie.repository.mappers.UsuarioMapper;
+import com.turnos.sistema_turnos.persistencie.repository.mappers.interfaces.UsuarioMapper;
 import org.springframework.stereotype.Repository;
 
 import java.util.Optional;

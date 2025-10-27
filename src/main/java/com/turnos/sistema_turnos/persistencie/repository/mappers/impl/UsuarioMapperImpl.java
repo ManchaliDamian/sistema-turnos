@@ -1,11 +1,12 @@
-package com.turnos.sistema_turnos.persistencie.repository.mappers;
+package com.turnos.sistema_turnos.persistencie.repository.mappers.impl;
 
 import com.turnos.sistema_turnos.model.Usuario;
 import com.turnos.sistema_turnos.persistencie.entity.UsuarioJPA;
+import com.turnos.sistema_turnos.persistencie.repository.mappers.interfaces.UsuarioMapper;
 import org.springframework.stereotype.Component;
 
 @Component
-public class UsuarioMapperImpl implements UsuarioMapper{
+public class UsuarioMapperImpl implements UsuarioMapper {
     @Override
     public UsuarioJPA toJPA(Usuario usuario) {
          UsuarioJPA usuarioJPA = new UsuarioJPA(usuario.getNombre(), usuario.getApellido(), usuario.getEmail(), usuario.getTel());
