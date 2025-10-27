@@ -18,6 +18,6 @@ public class Profesional extends Persona{
         super(nombre, apellido, email, tel);
         this.setEspecialidad(especialidad);
         this.setActivo(true);
-
+        this.servicios = new HashSet<>();
     }
 }
