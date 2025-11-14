@@ -50,16 +50,6 @@ public class TurnoJPA {
     @Column(length = 1000)
     private String observaciones;
 
-    @CreationTimestamp
-    @Column(name = "created_at", updatable = false)
-    private Instant createdAt;
-
-    @UpdateTimestamp
-    @Column(name = "updated_at")
-    private Instant updatedAt;
-
-    @Version
-    private Long version;
 
     public TurnoJPA (LocalDateTime fecha_hora_inicio, LocalDateTime fecha_hora_fin, ClienteJPA usuario, ProfesionalJPA profesional, ServicioJPA servicio, String observaciones) {
         this.fecha_hora_inicio = fecha_hora_inicio;
