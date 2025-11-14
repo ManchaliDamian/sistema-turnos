@@ -46,14 +46,6 @@ public abstract class PersonaJPA {
     @ColumnDefault("false")
     private boolean activo = false;
 
-    // Auditoria
-    @CreationTimestamp
-    @Column(name = "created_at", updatable = false)
-    private Instant created_at;
-
-    @UpdateTimestamp
-    @Column(name = "updated_at")
-    private Instant update_at;
 
     public PersonaJPA(String nombre, String apellido, String email, String tel) {
         this.nombre = nombre;

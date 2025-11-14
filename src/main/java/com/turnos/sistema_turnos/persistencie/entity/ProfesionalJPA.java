@@ -26,7 +26,7 @@ public class ProfesionalJPA extends PersonaJPA {
     @Size(max=100)
     private String especialidad;
 
-    @OneToMany(mappedBy = "profesional", cascade = CascadeType.ALL, orphanRemoval = true)
+    @ManyToMany(mappedBy = "profesional", cascade = CascadeType.ALL)
     private Set<ServicioJPA> servicios = new HashSet<>();
 
 

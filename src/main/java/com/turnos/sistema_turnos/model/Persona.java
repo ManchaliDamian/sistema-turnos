@@ -15,9 +15,6 @@ public abstract class Persona {
     private String tel;
     private boolean activo = false;
 
-    // auditoria
-    private Instant created_at;
-    private Instant update_at;
 
     public Persona(String nombre, String apellido, String email, String tel) {
         this.nombre = nombre;

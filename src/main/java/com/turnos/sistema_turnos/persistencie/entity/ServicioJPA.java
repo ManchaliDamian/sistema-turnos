@@ -46,14 +46,6 @@ public class ServicioJPA {
     @ColumnDefault("true")
     private boolean activo = true;
 
-    // Auditoria
-    @CreationTimestamp
-    @Column(name = "created_at", updatable = false)
-    private Instant created_at;
-
-    @UpdateTimestamp
-    @Column(name = "updated_at")
-    private Instant update_at;
 
     public ServicioJPA (String nombre, String descripcion, int duracion_minutos, BigDecimal precio) {
         this.nombre = nombre;
