@@ -23,7 +23,7 @@ import java.util.Set;
 public class ServicioJPA {
     @Id
     @GeneratedValue(strategy =  GenerationType.IDENTITY)
-    private Long id;
+    private Long servicioId;
 
     @NotBlank
     @Size(max=150)
@@ -39,7 +39,18 @@ public class ServicioJPA {
     @ColumnDefault("0")
     private BigDecimal precio;
 
-    @ManyToMany(mappedBy = "servicios", cascade = CascadeType.ALL)
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(
+            name = "Profesional_Servicio",
+            joinColumns =  @JoinColumn(
+                    name = "servicio_id",
+                    referencedColumnName = "servicioId"
+            ),
+            inverseJoinColumns = @JoinColumn(
+                name = "profesional_id",
+                referencedColumnName = "personaId")
+
+    )
     private Set<ProfesionalJPA> profesionales;
 
     @Column(nullable = false)

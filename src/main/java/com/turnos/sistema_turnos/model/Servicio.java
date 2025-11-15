@@ -14,6 +14,7 @@ import java.util.Set;
 public class Servicio {
 
     private Long id;
+    private String nombre;
     private String descripcion;
     private int duracion_minutos;
     private BigDecimal precio;
@@ -22,7 +23,8 @@ public class Servicio {
     private Instant created_at;
     private Instant update_at;
 
-    public Servicio(String descripcion, int duracion_minutos, BigDecimal precio) {
+    public Servicio(String nombre, String descripcion, int duracion_minutos, BigDecimal precio) {
+        this.nombre = nombre;
         this.descripcion = descripcion;
         this.duracion_minutos = duracion_minutos;
         this.precio = precio;

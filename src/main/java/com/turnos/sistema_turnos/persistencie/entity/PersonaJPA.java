@@ -24,7 +24,7 @@ public abstract class PersonaJPA {
     @Id
     @GeneratedValue(strategy =  GenerationType.IDENTITY)
     @EqualsAndHashCode.Include
-    private Long id;
+    private Long personaId;
 
     @NotBlank(message = "El nombre es obligatorio.")
     @Size(max=100)
