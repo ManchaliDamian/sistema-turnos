@@ -9,4 +9,5 @@ public interface ClienteRepository {
     Cliente actualizar(Cliente cliente);
     Optional<Cliente> recuperar(Long cliente_id);
     void eliminar(Long cliente_id);
+    void deleteAll();
 }

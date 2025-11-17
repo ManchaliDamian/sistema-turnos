@@ -1,25 +1,32 @@
 package com.turnos.sistema_turnos.persistencie.entity;
 
-import jakarta.persistence.*;
-import jakarta.validation.constraints.*;
-import lombok.*;
-import org.hibernate.annotations.ColumnDefault;
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.DiscriminatorValue;
+import jakarta.persistence.Entity;
+import jakarta.persistence.OneToMany;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+import java.util.HashSet;
+import java.util.Set;
 
 @Getter
 @Setter
-@ToString
 @NoArgsConstructor
-@EqualsAndHashCode
 @Entity
-@DiscriminatorValue("USUARIO")
-@Table( name = "Usuario",
-        indexes = {@Index(name = "idx_email",  columnList="email", unique = true)})
+@DiscriminatorValue("CLIENTE")
 public class ClienteJPA extends PersonaJPA {
 
 
+    @OneToMany(
+            mappedBy = "cliente",
+            cascade = CascadeType.ALL,
+            orphanRemoval = true
+    )
+    private Set<TurnoJPA> turnos = new HashSet<>();
 
     public ClienteJPA(String nombre, String apellido, String email, String tel) {
         super(nombre, apellido, email, tel);
-
     }
 }

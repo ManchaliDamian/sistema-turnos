@@ -17,14 +17,14 @@ import java.time.Instant;
 @NoArgsConstructor
 @EqualsAndHashCode
 @Entity
-@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@Inheritance( strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "tipo_persona", discriminatorType = DiscriminatorType.STRING)
 @DiscriminatorValue("PERSONA_BASE")
 public abstract class PersonaJPA {
     @Id
     @GeneratedValue(strategy =  GenerationType.IDENTITY)
     @EqualsAndHashCode.Include
-    private Long personaId;
+    private Long id;
 
     @NotBlank(message = "El nombre es obligatorio.")
     @Size(max=100)

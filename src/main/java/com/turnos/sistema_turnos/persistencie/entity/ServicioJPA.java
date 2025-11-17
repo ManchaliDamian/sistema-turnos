@@ -48,7 +48,7 @@ public class ServicioJPA {
             ),
             inverseJoinColumns = @JoinColumn(
                 name = "profesional_id",
-                referencedColumnName = "personaId")
+                referencedColumnName = "id")
 
     )
     private Set<ProfesionalJPA> profesionales;

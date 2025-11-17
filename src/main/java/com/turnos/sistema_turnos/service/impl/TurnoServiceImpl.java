@@ -16,26 +16,28 @@ public class TurnoServiceImpl implements TurnoService {
 
     @Override
     public Turno crear(Turno turno) {
-        return null;
+        return turnoRepository.crear(turno);
     }
 
     @Override
     public Optional<Turno> obtenerPorId(Long id) {
-        return Optional.empty();
+        return turnoRepository.recuperar(id);
     }
 
     @Override
     public List<Turno> obtenerTodos() {
-        return List.of();
+        return turnoRepository.obtenerTodos();
     }
 
     @Override
     public Turno actualizar(Long id, Turno turno) {
-        return null;
+        // La responsabilidad del servicio es asegurar que el ID esté en el objeto
+        turno.setId(id);
+        return turnoRepository.actualizar(turno);
     }
 
     @Override
     public void eliminar(Long id) {
-
+        turnoRepository.eliminar(id);
     }
 }

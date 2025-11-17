@@ -11,7 +11,7 @@ public class ClienteMapperImpl implements ClienteMapper {
     public ClienteJPA toJPA(Cliente cliente) {
          ClienteJPA clienteJPA = new ClienteJPA(cliente.getNombre(), cliente.getApellido(), cliente.getEmail(), cliente.getTel());
          clienteJPA.setActivo(cliente.isActivo());
-         clienteJPA.setRol(cliente.getRol());
+        clienteJPA.setId(cliente.getId());
 
         return clienteJPA;
     }
@@ -21,9 +21,6 @@ public class ClienteMapperImpl implements ClienteMapper {
         Cliente cliente = new Cliente(clienteJPA.getNombre(), clienteJPA.getApellido(), clienteJPA.getEmail(), clienteJPA.getTel());
         cliente.setId(clienteJPA.getId());
         cliente.setActivo(clienteJPA.isActivo());
-        cliente.setRol(clienteJPA.getRol());
-        cliente.setCreated_at(clienteJPA.getCreated_at());
-        cliente.setUpdate_at(clienteJPA.getUpdate_at());
         return cliente;
     }
 }

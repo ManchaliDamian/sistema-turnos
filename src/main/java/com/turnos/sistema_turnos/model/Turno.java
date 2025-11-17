@@ -1,10 +1,15 @@
 package com.turnos.sistema_turnos.model;
 
 import com.turnos.sistema_turnos.model.enums.EstadoTurno;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.time.Instant;
 import java.time.LocalDateTime;
-
+@Getter
+@Setter
+@NoArgsConstructor
 public class Turno {
     private Long id;
     private LocalDateTime fecha_hora_inicio;

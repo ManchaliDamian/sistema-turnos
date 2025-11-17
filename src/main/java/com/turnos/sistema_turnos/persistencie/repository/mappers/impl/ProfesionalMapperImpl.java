@@ -3,16 +3,20 @@ package com.turnos.sistema_turnos.persistencie.repository.mappers.impl;
 import com.turnos.sistema_turnos.model.Profesional;
 import com.turnos.sistema_turnos.persistencie.entity.ProfesionalJPA;
 import com.turnos.sistema_turnos.persistencie.repository.mappers.interfaces.ProfesionalMapper;
+import org.springframework.stereotype.Component;
 
+@Component
 public class ProfesionalMapperImpl implements ProfesionalMapper {
     @Override
     public ProfesionalJPA toJPA(Profesional profesional) {
         ProfesionalJPA profesionalJPA = new ProfesionalJPA(profesional.getNombre(), profesional.getApellido(), profesional.getEmail(), profesional.getTel(), profesional.getEspecialidad());
         profesionalJPA.setId(profesional.getId());
         profesionalJPA.setActivo(profesional.isActivo());
-        // mapper de servicios
-        // profesionalJPA.setServicios(profesional.getServicios());
-        return null;
+        // TODO: Mapear la lista de servicios cuando se inyecte el ServicioMapper
+        // if (profesional.getServicios() != null) {
+        //     profesionalJPA.setServicios(profesional.getServicios().stream().map(servicioMapper::toJPA).collect(Collectors.toSet()));
+        // }
+        return profesionalJPA;
     }
 
     @Override

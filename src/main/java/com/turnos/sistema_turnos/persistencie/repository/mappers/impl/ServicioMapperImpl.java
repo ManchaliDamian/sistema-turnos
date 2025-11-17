@@ -20,7 +20,7 @@ public class ServicioMapperImpl implements ServicioMapper {
             servicio.getDuracion_minutos(),
             servicio.getPrecio()
         );
-        servicioJPA.setId(servicio.getId());
+        servicioJPA.setServicioId(servicio.getId());
         servicioJPA.setActivo(servicio.isActivo());
         // mapper de profesionales
         // servicioJPA.setProfesionales(servicio.getProfesionales());
@@ -39,7 +39,7 @@ public class ServicioMapperImpl implements ServicioMapper {
             servicioJPA.getDuracion_minutos(),
             servicioJPA.getPrecio()
         );
-        servicio.setId(servicioJPA.getId());
+        servicio.setId(servicioJPA.getServicioId());
         servicio.setActivo(servicioJPA.isActivo());
         return servicio;
     }

@@ -20,13 +20,12 @@ import java.util.Set;
 @EqualsAndHashCode
 @Entity
 @DiscriminatorValue("PROFESIONAL")
-@Table
 public class ProfesionalJPA extends PersonaJPA {
 
     @Size(max=100)
     private String especialidad;
 
-    @ManyToMany(cascade = CascadeType.ALL)
+    @ManyToMany(mappedBy = "profesionales")
     private Set<ServicioJPA> servicios = new HashSet<>();
 
 

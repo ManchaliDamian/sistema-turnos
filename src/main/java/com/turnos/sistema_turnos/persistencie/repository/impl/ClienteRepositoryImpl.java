@@ -43,4 +43,9 @@ public class ClienteRepositoryImpl implements ClienteRepository {
     public void eliminar(Long cliente_id) {
         clienteDAO.deleteById(cliente_id);
     }
+
+    @Override
+    public void deleteAll() {
+        clienteDAO.deleteAll();
+    }
 }

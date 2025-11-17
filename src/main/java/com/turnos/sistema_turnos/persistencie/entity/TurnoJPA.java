@@ -37,7 +37,7 @@ public class TurnoJPA {
 
     @ManyToOne
     @JoinColumn(name = "usuario_id", nullable = false)
-    private ClienteJPA usuario;
+    private ClienteJPA cliente;
 
     @ManyToOne
     @JoinColumn(name = "profesional_id", nullable = false)
@@ -51,10 +51,10 @@ public class TurnoJPA {
     private String observaciones;
 
 
-    public TurnoJPA (LocalDateTime fecha_hora_inicio, LocalDateTime fecha_hora_fin, ClienteJPA usuario, ProfesionalJPA profesional, ServicioJPA servicio, String observaciones) {
+    public TurnoJPA (LocalDateTime fecha_hora_inicio, LocalDateTime fecha_hora_fin, ClienteJPA cliente, ProfesionalJPA profesional, ServicioJPA servicio, String observaciones) {
         this.fecha_hora_inicio = fecha_hora_inicio;
         this.fecha_hora_fin = fecha_hora_fin;
-        this.usuario = usuario;
+        this.cliente = cliente;
         this.profesional = profesional;
         this.servicio = servicio;
         this.observaciones = observaciones;

@@ -2,6 +2,7 @@ package com.turnos.sistema_turnos.persistencie.repository.interfaces;
 
 import com.turnos.sistema_turnos.model.Turno;
 
+import java.util.List;
 import java.util.Optional;
 
 public interface TurnoRepository {
@@ -9,5 +10,5 @@ public interface TurnoRepository {
     Turno actualizar(Turno turno);
     Optional<Turno> recuperar(Long turno_id);
     void eliminar(Long turno_id);
-
+    List<Turno> obtenerTodos();
 }
