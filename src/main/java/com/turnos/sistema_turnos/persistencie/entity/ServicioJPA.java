@@ -53,6 +53,14 @@ public class ServicioJPA {
     )
     private Set<ProfesionalJPA> profesionales;
 
+    //fijarse el mapper
+    @OneToMany(
+            mappedBy = "servicio",
+            cascade = CascadeType.ALL,
+            orphanRemoval = true
+    )
+    private Set<TurnoJPA> turnos = new HashSet<>();
+
     @Column(nullable = false)
     @ColumnDefault("true")
     private boolean activo = true;

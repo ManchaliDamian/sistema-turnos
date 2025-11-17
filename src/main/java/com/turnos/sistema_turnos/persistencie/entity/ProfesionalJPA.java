@@ -28,6 +28,14 @@ public class ProfesionalJPA extends PersonaJPA {
     @ManyToMany(mappedBy = "profesionales")
     private Set<ServicioJPA> servicios = new HashSet<>();
 
+    // fijarse el mapper
+    @OneToMany(
+            mappedBy = "profesional",
+            cascade = CascadeType.ALL,
+            orphanRemoval = true
+    )
+    private Set<TurnoJPA> turnos = new HashSet<>();
+
 
    public ProfesionalJPA(String nombre, String apellido, String email, String tel, String especialidad ) {
        super(nombre,apellido, email, tel );
