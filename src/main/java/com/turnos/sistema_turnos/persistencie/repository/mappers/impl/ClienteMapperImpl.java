@@ -11,6 +11,8 @@ public class ClienteMapperImpl implements ClienteMapper {
     public ClienteJPA toJPA(Cliente cliente) {
          ClienteJPA clienteJPA = new ClienteJPA(cliente.getNombre(), cliente.getApellido(), cliente.getEmail(), cliente.getTel());
          clienteJPA.setActivo(cliente.isActivo());
+         // mapper de turnos
+         // clienteJPA.setTurnos(cliente.getTurnos());
         clienteJPA.setId(cliente.getId());
 
         return clienteJPA;
@@ -20,6 +22,8 @@ public class ClienteMapperImpl implements ClienteMapper {
     public Cliente toModel(ClienteJPA clienteJPA) {
         Cliente cliente = new Cliente(clienteJPA.getNombre(), clienteJPA.getApellido(), clienteJPA.getEmail(), clienteJPA.getTel());
         cliente.setId(clienteJPA.getId());
+        // mapper de turnos
+        // cliente.setTurnos(clienteJPA.getTurnos());
         cliente.setActivo(clienteJPA.isActivo());
         return cliente;
     }
