@@ -10,7 +10,7 @@ import java.util.Set;
 @Setter
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 public class Cliente extends Persona {
-    // mapper agregarlo
+
     private Set<Turno> turnos = new HashSet<>();
     public Cliente(String nombre, String apellido, String email, String tel) {
         super(nombre,apellido,email,tel);
